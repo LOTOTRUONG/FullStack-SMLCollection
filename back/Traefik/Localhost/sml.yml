@@ -1,0 +1,67 @@
+version: '3.7'
+
+services:
+  database:
+    container_name: SMLDatas
+    image: loantruong181/sml:v1
+    restart: always
+    networks:
+      - SMLCollection
+
+  mailer:
+    container_name: SMLMAILER-API
+    image: loantruong181/smlmailer-api:latest
+    restart: always    
+    networks:
+      - SMLCollection
+ 
+
+
+  sml:
+    image: loantruong181/sml-api:latest
+    container_name: SML_API
+    restart: always
+    networks:
+      - SMLCollection
+    depends_on:
+      - database
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.sml-api.rule=Host(`sml.${DOMAIN}`) && PathPrefix(`/sml`)"
+      - "traefik.http.routers.sml-api.entrypoints=${ENTRYPOINT}"
+      - "traefik.http.routers.sml-api.tls=${TLS}"
+
+  auth:
+    image: loantruong181/smlauth-api:latest
+    container_name: SMLAUTH-API
+    restart: always
+    networks:
+      - SMLCollection
+    depends_on:
+      - database
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.sml-auth.rule=Host(`sml.${DOMAIN}`) && PathPrefix(`/auth`)"
+      - "traefik.http.routers.sml-auth.entrypoints=${ENTRYPOINT}"
+      - "traefik.http.routers.sml-auth.tls=${TLS}"
+
+  apikey:
+    image: loantruong181/smlapikey-api:latest
+    container_name: SMLAPIKEY-API
+    restart: always
+    networks:
+      - SMLCollection
+    depends_on:
+      - database
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.sml-apikey.rule=Host(`sml.${DOMAIN}`) && PathPrefix(`/apikey`)"
+      - "traefik.http.routers.sml-apikey.entrypoints=${ENTRYPOINT}"
+      - "traefik.http.routers.sml-apikey.tls=${TLS}"
+
+networks:
+  SMLCollection:
+    external: true
+
+
+ 
