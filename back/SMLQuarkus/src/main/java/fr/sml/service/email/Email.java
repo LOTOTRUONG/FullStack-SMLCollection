@@ -1,0 +1,18 @@
+package fr.sml.service.email;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Email {
+    @Schema(description = "Email address of the recipient", required = true, example = "recipient@example.com")
+    private String sendTo;
+    private String subject;
+    private String text;
+}
