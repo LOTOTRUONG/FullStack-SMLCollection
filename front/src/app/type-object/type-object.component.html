@@ -1,0 +1,38 @@
+
+
+<section class="content">
+
+    <div class="typesCollection">
+      <div class="type-title">
+        <h1>Available Types of Collection</h1>
+      </div>
+      <div class="type-container containers">
+        <div class="type" *ngFor="let type of typeObjects; let i = index" (click)="openObjects(type.idTypeObjet)">
+          <div class="type-frame">
+            <img
+              src="https://media.istockphoto.com/id/1396814518/vector/image-coming-soon-no-photo-no-thumbnail-image-available-vector-illustration.jpg?s=612x612&w=0&k=20&c=hnh2OZgQGhf0b46-J2z7aHbIWwq8HNlSDaNp2wn_iko="
+              alt="" />
+          </div>
+          <div>
+            <h2>{{type.nomTypeObjet}}</h2>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="type-button" *ngIf="loggedUser && loggedUser?.role === 'admin' || loggedUser?.role==='superadmin'">
+        <a (click)="onOpenDialog()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          ADD NEW
+        </a>
+      </div>
+    </div>
+  
+  
+  </section>
+
+
+  

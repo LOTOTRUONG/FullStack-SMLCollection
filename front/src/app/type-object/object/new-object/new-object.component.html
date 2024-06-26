@@ -1,0 +1,64 @@
+<div class="dialog-container">
+    <h2 class="dialog-title">Add new object</h2>
+    <div class="dialog-content">
+      <div class="form-add-new">
+        <div class="field-form">
+          <table>
+            <tr>
+              <td>
+                <p class="text-form">New Object: </p>
+              </td>
+              <td>
+                <input id="nomObjet" class="inputs" #nomObjet matInput [(ngModel)]="data.libelleObjet">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="text-form">Country: </p>
+              </td>
+              <td>                
+                <select matNativeControl id="nomPays" name="nomPays" #nomPays class="inputs" [(ngModel)]="data.nomPays">
+                  <option *ngFor="let item of allCountries" [value]="item.nomPays">{{item.nomPays}}</option>
+                </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="text-form">Type: </p>
+              </td>
+              <td>
+                <p>{{ currentTypeObject?.nomTypeObjet }}</p>  
+              </td>
+            </tr>
+          </table>
+         
+          
+            
+        </div>
+    
+        <div class="media-form">
+          <div class="media-form-containers">
+            <span class="media-overlay" #mediaOverlay>
+              <input type="file" id="media-input" #mediaInput accept="image/*">
+                  <i class="fa fa-pencil media-icon"></i>
+            </span>
+            <div class="media-object">
+              <img class="img-object" #imgObject src="https://cdn2.iconfinder.com/data/icons/admin-tools-2/25/image2-512.png">
+            </div>
+          </div>
+          <div class="media-control">
+            <button class="btn edit-profile" #editProfile>
+              <i class="fa fa-edit"></i>Edit</button>
+            <button class="btn save-profile" #saveProfile>
+              <i class="fa fa-thumbs-up"></i>Save</button>
+          </div>
+        </div>
+    </div>
+      </div>
+    <mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">No Thanks</button>
+      <button mat-button (click)="onCreateNewObject()">Ok</button>
+    </mat-dialog-actions>
+    </div>
+    

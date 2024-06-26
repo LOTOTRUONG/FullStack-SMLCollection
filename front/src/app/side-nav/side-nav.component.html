@@ -1,0 +1,64 @@
+<nav class="main-side">
+  <div>
+    <div class="user-info">
+      <div class="user-avatar" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg);">
+      </div>
+      <h1 class="name-user">{{loggedUser?.login}}</h1>
+    </div>
+    <ul>
+      <li class="nav-item">
+        <a routerLink="/dashboard" routerLinkActive="list-item-active">
+          <i class="fa fa-tachometer nav-icon"></i>
+          <span class="nav-text">Dashboard</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/typeObject" routerLinkActive="list-item-active">
+          <i class="fa fa-map nav-icon"></i>
+          <span class="nav-text">Collections</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/collections" routerLinkActive="list-item-active">
+          <i class="fa fa-check-square-o nav-icon"></i>
+          <span class="nav-text">Collections</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/wishlists">
+          <i class="fa fa-clone nav-icon"></i>
+          <span class="nav-text">Whishlists</span>
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+  <div class="user-setting">
+    <ul>
+      <li class="nav-item">
+        <a routerLink = "/profile" routerLinkActive="list-item-active">
+          <i class="fa fa-user nav-icon"></i>
+          <span class="nav-text">Profile</span>
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="loggedUser?.role == 'superadmin' || loggedUser?.role == 'admin'">
+        <a routerLink="/administration" routerLinkActive="list-item-active">
+          <i class="fa fa-cog nav-icon"></i>
+          <span class="nav-text">Administration</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/login">
+          <i class="fa fa-sign-out nav-icon"></i>
+          <span class="nav-text" (click)="onLogoff()">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

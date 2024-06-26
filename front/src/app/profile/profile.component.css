@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Open+sans);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+.content{
+  display: grid;
+  grid-template-columns: 55% 45%;
+  padding: 64px 32px;
+  min-height: calc(100vh - 3rem);
+
+}
+.frame,
+.user-infor {
+  justify-self: center;
+  align-self: center;
+}
+.frame {
+  border: 2px solid #e8b563;
+  display: inline-flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center;
+  border-radius: 40px;
+  width: calc(35em + 48px); /* Width of profile-form-container + horizontal margin */
+}
+
+.profile-form-container {
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 24px 24px;
+  opacity: 0.8;
+  min-width: 35em;
+}
+
+.profile-form-container h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.profileForm{
+  text-align: center;
+}
+.profileForm label {
+  position: absolute;
+  left: 5rem;
+  top: -8px;
+  background-color: #fff;
+  padding: 0 4px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.profileForm input {
+  padding: 8px 12px;
+  min-width: 70%;
+  min-height: 2rem;
+}
+.input-text{
+  font-size: 16px;
+}
+
+.profileForm input:focus + label,
+.profileForm input:valid + label {
+  top: -20px;
+  font-size: 16px;
+  padding: 0 4px;
+  background-color: #fff;
+}
+.btn-submit {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-position: 100% 0;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-submit:focus {
+  outline: none;
+}
+.btn-submit.color-1 {
+  background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+  box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+
+.user-infor {
+  font-family: 'Open Sans', Arial, sans-serif;
+  position: relative;
+  margin: 3rem !important;
+  min-width: 350px;
+  max-width: 450px;
+  width: 100%;
+  color: #000000;
+  text-align: center;
+  line-height: 1.4em;
+  font-size: 14px;
+  box-shadow: none !important;
+}
+
+.user-infor * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.user-infor .profile-image {
+  display: inline-block;
+  width: 80%;
+  z-index: 1;
+  position: relative;
+  padding: 10px;
+  border: 2px solid #e8b563;
+}
+
+.user-infor .profile-image:hover .avatar-image {
+  filter: grayscale(100%);
+}
+
+.user-infor .profile-image .avatar-image {
+  max-width: 100%;
+  vertical-align: top;
+  overflow: hidden;
+  animation: inPop 1s 150ms 1 forwards cubic-bezier(0.175, 0.885, 0.32, 1.175);
+  transform: scale(0);
+  opacity: 0;
+}
+
+@keyframes inPop {
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.avatar-edit{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  background: rgba(46, 39, 80, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.avatar-edit input[type="file"] {
+  display: none;
+}
+
+.avatar-edit .upload_label{
+  text-align: center;
+  background-image: linear-gradient(to left, #852D91, #A3A1FF);
+  box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  transition: all .4s ease-in-out;
+}
+.avatar-edit .upload_label:hover{
+  color: #F2F2F2;
+  font-size: 120%;
+}
+.profile-image:hover .avatar-edit {
+  opacity: 1;
+}
+
+
+
+.user-infor figcaption {
+  width: 100%;
+  background-color: #F2F2F2;
+  opacity: 0.8;
+  color: #555;
+  padding: 125px 25px 25px;
+  margin-top: -100px;
+  display: inline-block;
+}
+
+.user-infor h3,
+.user-infor h4,
+.user-infor p {
+  margin: 0 0 5px;
+}
+
+.user-infor h3 {
+  font-weight: 600;
+  font-size: 1.3em;
+  font-family: 'Playfair Display', Arial, sans-serif;
+}
+
+.user-infor h4 {
+  color: #8c8c8c;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.user-infor p {
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.user-infor .icons {
+  text-align: center;
+  width: 100%;
+}
+
+.user-infor i {
+  padding: 10px 2px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: normal;
+  color: #e8b563;
+  opacity: 0.75;
+}
+
+.user-infor i:hover {
+  opacity: 1;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+

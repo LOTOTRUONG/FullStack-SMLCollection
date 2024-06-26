@@ -1,0 +1,36 @@
+
+
+<section class="content">
+
+  <div class="typesCollection">
+    <h1 class="title">Available Type of Collection</h1>
+    <div class="type-container containers">
+      <div class="type" *ngFor="let type of typeObjects" (click)="selectTypeObject(type)">
+        <div class="type-frame">
+          <img
+            src="https://media.istockphoto.com/id/1396814518/vector/image-coming-soon-no-photo-no-thumbnail-image-available-vector-illustration.jpg?s=612x612&w=0&k=20&c=hnh2OZgQGhf0b46-J2z7aHbIWwq8HNlSDaNp2wn_iko="
+            alt="" />
+        </div>
+        <div>
+          <h2 [class.active] = "selectedTypeObject === type">{{type.nomTypeObjet}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="objects">
+    <h1 class="title">Collected Objects</h1>
+    <div class="object-container containers" *ngIf="selectedTypeObject">
+      <div class="object" *ngFor="let object of objects | slice:0:4">
+        <img
+          src="https://media.istockphoto.com/id/1396814518/vector/image-coming-soon-no-photo-no-thumbnail-image-available-vector-illustration.jpg?s=612x612&w=0&k=20&c=hnh2OZgQGhf0b46-J2z7aHbIWwq8HNlSDaNp2wn_iko="
+          alt="" />
+          <h2>{{object.libelleObjet}}</h2>
+          <p>{{selectedTypeObject.nomTypeObjet}}</p>
+      </div>
+    </div>
+  </div>
+
+ 
+
+</section>

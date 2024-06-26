@@ -1,0 +1,128 @@
+
+.header {
+  height: 3rem;
+  padding: 20px 50px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 5px 5px #939393;
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo .logoCompany{
+  border-radius: 50%;
+  width: 5rem;
+  padding: 0 1rem;
+}
+.logoTitle{
+  font: 700 3em/1 "Oswald", sans-serif;
+  letter-spacing: 0;
+  padding: .25em 0 .325em;
+  display: block;
+  margin: 0 auto;
+  text-shadow: 0 0 80px rgba(255,255,255,.5);
+
+  /* Clip Background Image */
+
+  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Animate Background Image */
+
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 80s linear infinite;
+
+  /* Activate hardware acceleration for smoother animations */
+
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-backface-visibility: hidden;
+}
+
+
+@-webkit-keyframes aitf {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.header__avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  margin: 0 26px;
+  cursor: pointer;
+}
+
+.header__avatar:after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: none;
+  border-left: 2px solid #777;
+  border-bottom: 2px solid #777;
+  transform: rotate(-45deg) translateY(-50%);
+  top: 50%;
+  right: -18px;
+}
+.dropdown{
+  position: absolute;
+  top: 54px;
+  right: -16px;
+  width: 220px;
+  height: auto;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all .3s;
+
+}
+
+.dropdown__list{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.dropdown__list-item{
+  padding: 12px 24px;
+  color: #777;
+  text-transform: capitalize;
+
+}
+
+.dropdown__icon{
+  color:#2751ac;
+}
+
+.dropdown__title{
+  margin-left: 16px;
+}
+
+.dropdown__list-item:hover{
+  background-color: rgba(0,0,0, .1);
+}
+
+.dropdown--active{
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+

@@ -1,0 +1,49 @@
+<section class="content">
+  <div class="frame">
+    <div class="profile-form-container">
+      <h1>Edit Profile</h1>
+      <form [formGroup]="profileForm" class="profileForm"  (ngSubmit)="submitForm()">
+        <div class="input-container">
+          <label for="username">Username*</label>
+          <input type="text" class="input-text" id="username" formControlName="username" name="username" value="{{loggedUser?.login}}" readonly>
+        </div>
+
+        <div class="input-container">
+          <label for="email">Email*</label>
+          <input type="email" class="input-text" id="email" formControlName="email" name="email" value="{{loggedUser?.email}}" required>
+        </div>
+
+        <div class="input-container">
+          <label for="new-password">New password</label>
+          <input type="password" class="input-text" id="new-password" name="new-password">
+        </div>
+
+        <div class="input-container">
+          <label for="repeat-password">Repeat password</label>
+          <input type="password" class="input-text" id="repeat-password" name="repeat-password">
+        </div>
+
+        <button type="submit" class="btn-submit color-1" >Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+  <figure class="user-infor">
+    <div class="profile-image">
+      <img class="avatar-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample47" />
+      <div class="avatar-edit">
+        <label for="imageUpload" class="upload_label"> UPLOAD
+          <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+        </label>
+      </div>
+    </div>
+    <figcaption>
+      <h3 id="logged_username">{{loggedUser?.login}}</h3>
+      <h4>Email: {{loggedUser?.email}}</h4>
+      <p>Role: {{loggedUser?.role}}</p>
+    </figcaption>
+  </figure>
+
+
+</section>

@@ -1,0 +1,36 @@
+<section class="content">
+  <div class="objects-header">
+    <button class="fa fa-fast-backward btn-return" (click)="returnTypeObject()"></button>
+  </div>
+
+    <div class="objectsCollection">
+      <div class="objects-title">
+        <h1>Collected Objects</h1>
+      </div>
+      <div class="objects-container containers">
+        <div class="objects" *ngFor="let object of objects" (click)="openDetailObject(object.idObjet)">
+          <div class="objects-frame">
+            <img
+              src="https://media.istockphoto.com/id/1396814518/vector/image-coming-soon-no-photo-no-thumbnail-image-available-vector-illustration.jpg?s=612x612&w=0&k=20&c=hnh2OZgQGhf0b46-J2z7aHbIWwq8HNlSDaNp2wn_iko="
+              alt="" />
+          </div>
+          <div>
+            <h2>{{object.libelleObjet}}</h2>
+          </div>
+        </div>
+        
+      </div>
+      <div class="objects-button">
+        <a (click)="onOpenDialog()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          ADD NEW
+        </a>
+      </div>
+    </div>
+  
+
+
+  

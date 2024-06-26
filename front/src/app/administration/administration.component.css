@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap");
+
+.main-content{
+    width: 100%;
+}
+
+.orange {
+    background-color: #ffcb77 !important;
+}
+
+.blue {
+    background-color: #97cbff !important;
+}
+
+.green {
+    background-color: #a7ff87 !important;
+}
+.red {
+    background-color: #f3737e !important;
+}
+
+.ad-container {
+    display: flex;
+}
+
+.list-group {
+    padding: 0 2rem;
+    width: 24rem;
+    display: inline-block;
+    vertical-align: top;
+    max-height: 600px;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.list-group ul {
+    padding: 0;
+    list-style: none;
+}
+
+.list-group ul li {
+    position: relative;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: black;
+    border-bottom: 1px solid #292c33;
+    transition: #34373d 0.2s linear, color 0.2s linear;
+    margin-bottom: 0.5rem;
+
+}
+
+.list-group .picture {
+    float: left;
+    width: 3rem;
+    position: relative;
+}
+
+.list-group .picture img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2rem;
+}
+
+.list-group .badge {
+    position: absolute;
+    bottom: -0.2rem;
+    right: -0.5rem;
+    background-color: #2776c5;
+    color: black;
+    font-size: 0.6rem;
+    line-height: 1.1rem;
+    width: 1.5rem;
+    text-align: center;
+    border: 3px solid #34373d;
+    border-radius: 1rem;
+}
+
+.list-group .content {
+    float: right;
+    width: calc(100% - 4rem);
+}
+
+.list-group .title {
+    color: black;
+    font-size: 1.3em;
+}
+
+.list-group .description {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+}
+
+.list-group .location {
+    display: none;
+    color: #206ca2;
+}
+
+.list-group .location i {
+    margin-right: 0.3rem;
+}
+
+.list-group .tags {
+    margin-top: 0.4rem;
+}
+
+.list-group .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0px 5px;
+    margin: 2px;
+    color: black;
+    background-color: #2776c5;
+    border-radius: 4px;
+}
+
+.list-group .footer {
+    display: block;
+    clear: both;
+    width: 100%;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    font-size: 0.7rem;
+}
+
+.list-group .info {
+    margin-right: 0.3rem;
+}
+
+.list-group .info.left {
+    float: left;
+}
+
+.list-group .info.right {
+    float: right;
+}
+
+.list-group span{
+    font-family: Nunito !important;
+    padding: 0.25rem;
+}
+
+.list-group ul li .functions {
+    opacity: 0.1;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.4rem;
+    color: #ffffff;
+    font-size: 0.8rem;
+    transition: opacity 0.2s linear;
+}
+
+.list-group ul li .functions .func {
+    display: inline-block;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.list-group ul li:hover {
+    background-color: rgba(39, 118, 197, 0.3);
+}
+
+.list-group ul li.active,
+.list-group ul li:active {
+    background-color: rgba(39, 118, 197, 0.6);
+}
+
+.list-group ul li.active:hover,
+.list-group ul li:active:hover,
+.list-group ul li.active,
+.list-group ul li:active {
+    color: black;
+}
+
+.list-group .location,
+.list-group .location {
+    color: black;
+}
+
+.list-group .functions,
+.list-group .functions {
+    color: black;
+    opacity: 0.7;
+}
+
+.list-group .badge{
+    border: 3px solid #c0c0c0;
+}
+
+
+.ad-content {
+    flex: auto;
+    padding: 0 2rem;
+}
+
+.ad-content .profile {
+    position: relative;
+    margin-right: 0.2rem;
+    color: #615f5f;
+}
+
+.ad-content .picture {
+    float: left;
+    width: 8rem;
+    margin: 0 1rem;
+    position: relative;
+}
+
+.ad-content .picture img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 4rem;
+}
+
+.ad-content .badge {
+    position: absolute;
+    bottom: 0.5rem;
+    right: -0.5rem;
+    background-color: #a5d2ff;
+    color: rgb(0, 0, 0);
+    font-size: 1.0rem;
+    line-height: 1.6rem;
+    width: 2.3rem;
+    text-align: center;
+    border: 6px solid #34373d;
+    border-radius: 2rem;
+}
+
+
+.ad-content .details {
+    margin-bottom: 1rem;
+}
+
+.ad-content .tags {
+    margin-bottom: 0.5rem;
+}
+
+.ad-content .tag {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 2px 8px;
+    margin: 2px;
+    color: black;
+    background-color: #b0d4f9;
+    border-radius: 4px;
+}
+
+.ad-content .title {
+    color: black;
+    font-weight: 300;
+    font-size: 2.3rem;
+}
+
+.ad-content .titulus {
+    display: none;
+    line-height: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.ad-content .description {
+    margin-top: 0.6rem;
+    line-height: 1.3rem;
+    font-size: 0.9rem;
+}
+
+.ad-content .info-row {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+}
+
+.ad-content .caption {
+    width: 1.5rem;
+    font-family: Nunito !important;
+    padding: 0.25rem;
+}
+
+.ad-content .value{
+    padding: 0.25rem;
+    font-family: Nunito !important;
+    font-size: 14px;
+}
+
+.ad-content .profile hr {
+    margin: 2rem 0;
+    border: none;
+    border-bottom: 1px solid #444851;
+}
+
+.ad-content .profile .further {
+    margin: 1rem 2rem;
+}
+
+.ad-content .info-block {
+        display: inline-block;
+        width: 40%;
+        color: #615f5f;
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+    
+}
+
+.ad-content .functions {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    text-align: right;
+}
+
+.ad-content .func {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0.2rem;
+    color: #615f5f;
+    font-size: 1.0rem;
+    line-height: 2.3rem;
+    width: 2.3rem;
+    text-align: center;
+    background-color: #3c3f47;
+    border-radius: 2rem;
+    transition: background-color 0.2s linear, color 0.2s linear;
+}
+.ad-content .func i{
+    color: white;
+}
+
+.ad-content .func:hover {
+    color: black;
+    background-color: #2776c5;
+}
+
+.ad-content .logs .title{
+    font-size: 0.9rem;
+        line-height: 1.4rem;
+        color: #2776c5;
+        font-weight: 400;
+} 
+.ad-content .logs table {
+        width: 100%;
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+    }
+
+.ad-content .logs table tr {
+        height: 1.4rem;
+    }
+
+.ad-content .logs table tr td a {
+        color: #2776c5;
+        text-decoration: none;
+    }
+
+.ad-content .logstable tr td a:hover {
+        text-decoration: underline;
+    }
+
+.ad-content .logs table tr td:nth-child(1) {
+        width: 5rem;
+    }
+

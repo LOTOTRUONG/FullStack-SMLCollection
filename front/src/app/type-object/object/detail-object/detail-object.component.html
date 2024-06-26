@@ -1,0 +1,31 @@
+<div class="detail-container">
+<div class="detail-name">
+        <h1>{{nameObjet?.libelleObjet}}</h1>
+</div>
+
+<div class="detail-attribute">
+<table>
+        <tr *ngFor="let object of detailObjects">
+            <th class="thread">
+                {{object.libelleAttribut}} 
+            </th>    
+            <td class="value">
+                {{object.libelleValeur}} 
+                {{object.valeurFloat}} 
+                {{object.valeurString}}
+            </td>
+            <td class="unit">
+                {{object.libelleUnite}}
+            </td>
+            <td class="button">
+                <button class="fa fa-edit"></button>
+            </td>
+        </tr>
+           
+    </table>
+</div>
+
+<div class="detail-fonction">
+    <button class="fa fa-plus-circle  btn-new"></button>
+</div>
+</div>

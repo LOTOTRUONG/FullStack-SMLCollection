@@ -1,0 +1,14 @@
+<div class="pinCode-container">
+<h2>Enter PIN Code</h2>
+    <div class = "pinCode-content">
+      <div>
+        <p for="pinCodeInput" class="pinCode-label">PIN Code:</p>
+      </div>
+      <div>
+        <input type="text" id="pinCodeInput" [(ngModel)]="pinCode" class="pinCode-input">
+      </div>
+  </div>
+  <div class="pinCode-btn">
+  <button class="pinCode-btnOk" (click)="onOK($event)" >OK</button>
+</div>
+</div>

@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "http://sml.localhost/auth",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

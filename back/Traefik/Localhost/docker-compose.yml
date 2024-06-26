@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  traefik:
+    image: traefik:latest
+    container_name: "traefik"
+    restart: always
+    ports:
+      # Web
+      - 80:80
+      - 443:443
+      - 8080:8080
+    volumes:
+      # Mapping sur le socket interne de Docker
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      #  Mapping du fichier de configuration statique
+      - ./config/static.yml:/etc/traefik/traefik.yml:ro
+      # Mapping du dossier contenant la configuration dynamique
+      - ./config/dynamic.yml:/etc/traefik/dynamic.yml:ro
+      # Mapping du fichier de stockage des certificats
+      - ./certs:/etc/certs:ro
+    networks:
+        - SMLCollection
+
+networks:
+  SMLCollection:
+    external: true 
+
+

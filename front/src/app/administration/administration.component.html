@@ -1,0 +1,205 @@
+
+<section class="main-content">
+    <div class="ad-container">
+        <div class="list-group">
+            <ul>
+                <li *ngFor="let user of users" [class.active]="selectedUser === user" (click)="selectUser(user)">
+                    <div class="picture">
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
+                        <div class="badge green" *ngIf="user.status">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <div class="badge red" *ngIf="!user.status">
+                            <i class="fa fa-times">
+                            </i>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="title">{{user.login}}</div>
+                        <div class="description">
+                            <div class="location">
+                                <i class="fa fa-map-marker">
+                                    <span>Paris, France</span>
+                                </i>
+                            </div>
+                            <div class="tags">
+                                <div class="tag orange" *ngIf="user?.role == 'admin' || user?.role =='superadmin'">{{user.role}}</div>
+                                <div class="tag blue" *ngIf="user?.role == 'user'">{{user.role}}</div>
+                                <div class="tag green" *ngIf="user.status"> Activé </div>
+                                <div class="tag red" *ngIf="!user.status"> Désactivé </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="info left">
+                            <i class="fa fa-clock-o fucIcon">
+                                <span *ngIf="user.connectionDate == null">Last Login: Not Connected</span>
+                                <span *ngIf="user.connectionDate != null">Last Login: {{user.connectionDate}}</span>
+                            </i>
+                        </div>
+                        <div class="info right">
+                            <i class="fa fa-calendar">
+                                <span>Today: {{today | date: 'yyyy-MM-dd'}}</span>
+                            </i>
+                        </div>
+                    </div>
+        
+                    <div class="functions">
+                        <div class="func">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="func">
+                            <i class="fa fa-trash"></i> 
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="ad-content" *ngIf="selectedUser">
+            <div class="profile">
+                <div class="picture">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
+                    <div class="badge green" *ngIf="selectedUser.status">
+                        <i class="fa fa-check">
+                        </i>
+                    </div>
+                    <div class="badge red" *ngIf="!selectedUser.status">
+                        <i class="fa fa-times">
+                        </i>
+                    </div>
+                </div>
+    
+                <div class="details">
+                        <div class="tags">
+                            <div class="tag orange" *ngIf="selectedUser.role == 'admin' || selectedUser.role == 'superadmin'">{{ selectedUser.role }}</div>
+                            <div class="tag blue" *ngIf="selectedUser.role == 'user'">{{ selectedUser.role }}</div>
+                            <div class="tag green" *ngIf="selectedUser.status">Activé</div>
+                            <div class="tag red" *ngIf="!selectedUser.status">Désactivé</div>
+                        </div>
+                        <div class="title">{{ selectedUser.login }}</div>
+                        <div class="titulus">{{selectedUser.role}}</div>
+                       
+                </div>
+                <div class="description">
+                            <div class="info-row">
+                                <i class="fa fa-clock-o">
+                                    <span class="caption">Last login: </span>
+                                    <span class="value">{{selectedUser.connectionDate ? selectedUser.connectionDate: 'Not Connected'}}</span>
+                                </i>
+                            </div>
+                            <div class="info-row">
+                                <i class="fa fa-clock-o">
+                                    <span class="caption">Today: </span>
+                                    <span class="value">{{today | date: 'yyyy-MM-dd'}}</span>
+                                </i>
+                            </div>
+    
+                        
+                </div>
+                <div class="functions">
+                        <div class="func">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="func">
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div class="func" *ngIf="(loggedUser.role === 'admin' || loggedUser.role === 'superadmin') && selectedUser.status === true && selectedUser.role !== 'superadmin' && selectedUser.login !== loggedUser.login" (click)="deactivateUsers()">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <div class="func" *ngIf="(loggedUser.role === 'admin' || loggedUser.role === 'superadmin') && selectedUser.status === false && selectedUser.role !== 'superadmin' && selectedUser.login !== loggedUser.login" (click)="reactivateUsers()">
+                            <i class="fa fa-unlock-alt"></i>
+                        </div>
+                        <div class="func">
+                            <i class="fa fa-share-alt"></i>
+                        </div>
+    
+                        <div class="func" *ngIf="selectedUser.role != 'superadmin' && selectedUser.login !== loggedUser.login">
+                            <i class="fa fa-trash"></i>
+                        </div>
+                </div>
+                <hr>
+                <div class="further">
+                        <div class="info-row">
+                            <div class="info-block">
+                                <i class="fa fa-home"></i>
+                                <span class="value">+2 574 986 224</span> 
+                            </div>
+    
+                            <div class="info-block">
+                                <i class="fa fa-globe"></i>
+                                <span class="value">test</span> 
+                            </div>
+    
+                            <div class="info-block">
+                                <i class="fa fa-phone"></i>
+                                <span class="value">+2 574 986 224</span> 
+                            </div>
+    
+                            <div class="info-block">
+                                <i class="fa fa-envelope"></i>
+                                <span class="value">{{selectedUser.email}}</span> 
+                            </div>
+                        </div>
+                </div>
+
+                <hr>
+                <div class="logs">
+                        <div class="title"> Last events</div>
+                        <table>
+                            <tr>
+                                <td>
+                                    2016-01-06 
+                                </td>
+                                <td>Logged in.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2016-01-06 
+                                </td>
+                                <td>Logged in.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2016-01-06 
+                                </td>
+                                <td>Logged in.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2016-01-06 
+                                </td>
+                                <td>Logged in.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2016-01-06 
+                                </td>
+                                <td>Logged in.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2016-01-06 
+                                </td>
+                                <td>Logged in.
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td>
+                                    2016-01-06 
+                                </td>
+                                <td>Logged in.
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
