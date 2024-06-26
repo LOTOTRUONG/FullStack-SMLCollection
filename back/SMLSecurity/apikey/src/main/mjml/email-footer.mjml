@@ -1,0 +1,29 @@
+<mjml>
+    <mj-head>
+        <mj-font name="FontAwesome" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </mj-head>
+<mj-body>
+    <mj-section padding="20px 20px 0 20px" background-color="#FFFFFF" text-align="center">
+        <mj-social mode="horizontal" padding="40px 0">
+            <mj-social-element name="facebook" padding="0 0px 0" background-color="transparent" icon-size="0px" color="#D72B30" font-size="24px" font-family="FontAwesome" href="#">&#xf09a;</mj-social-element>
+            <mj-social-element name="twitter" padding="0 20px 0" background-color="transparent" icon-size="0px" color="#D72B30" font-size="24px" font-family="FontAwesome" href="#">&#xf099;</mj-social-element>
+            <mj-social-element name="instagram" padding="0 20px 0" background-color="transparent" icon-size="0px" color="#D72B30" font-size="24px" font-family="FontAwesome" href="#">&#xf16d;</mj-social-element>
+        </mj-social>
+    </mj-section>
+<mj-section padding="10px 0 10px 0" background-color="#FFFFFF">
+    <mj-column>
+        <mj-text padding="10px 0px 0 40px" align="center" color="#888888" font-size="11px"
+                 font-style="normal" font-weight="normal" line-height="15px">
+            Si vous désirez contacter le Centre de Relations Clients, contactez-nous sur collection.com ou appelez-nous au 123456789 (de 8h à 20h du lundi au samedi, appel gratuit depuis un poste fixe).
+            <br/>
+        </mj-text>
+
+        <mj-text padding="10px 0px 0 40px" align="center" color="#888888" font-size="11px"
+                 font-style="normal" font-weight="normal" line-height="15px">
+            En raison de fortes demandes, les délais de réponses peuvent être plus longs qu'habituellement. Nous vous prions de bien vouloir nous en excuser et faisons le maximum pour vous satisfaire.
+            <br/>
+        </mj-text>
+    </mj-column>
+</mj-section>
+</mj-body>
+</mjml>

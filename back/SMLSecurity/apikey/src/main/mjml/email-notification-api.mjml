@@ -1,0 +1,46 @@
+<mjml>
+    <mj-head>
+        <mj-font name="OpenSans" href="https://fonts.googleapis.com/css2?family=Open+Sans:300,400,500,600"></mj-font>
+        <mj-attributes>
+            <mj-all font-family="Open Sans, sans-serif"></mj-all>
+            <mj-section padding="0px"></mj-section>
+        </mj-attributes>
+        <mj-font name="FontAwesome" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </mj-head>
+    <mj-body background-color="black">
+        <mj-section padding="20px 20px 0 20px">
+        </mj-section>
+        <mj-include path="./email-header.mjml"/>
+        <mj-section background-color="white" padding-bottom="16px">
+            <mj-column>
+                <mj-text font-weight="normal" font-size="13px" line-height="18px" color="#333333">
+                    Hello <strong>{clientName}</strong>,
+                </mj-text>
+                <mj-text  font-weight="normal" font-size="13px" line-height="18px" color="#333333">
+                    You have made a request to change your APIKEY
+                </mj-text>
+
+                <mj-text font-weight="normal" font-size="13px" line-height="18px" color="#333333">
+                    Your new APIKEY is:
+                </mj-text>
+                <mj-column border="none" vertical-align="top" padding="20px 20px 10px 20px" width="100%" background-color="#f0f8ff">
+                    <mj-text align="center" font-weight="800" font-size="13px" line-height="18px" color="#333333">
+                        {apikey}
+                    </mj-text>
+                </mj-column>
+                <mj-text padding="10px 0px 0 20px" font-style="normal" font-weight="normal"
+                         font-size="13px" line-height="18px" color="#333333">
+                    Regards,
+                </mj-text>
+                <mj-text padding="10px 0px 0 20px" font-style="normal" font-weight="bold"
+                         font-size="13px" line-height="18px" color="#333333">
+                    SML Team
+                </mj-text>
+
+            </mj-column>
+        </mj-section>
+        <mj-section padding="5px 0 0 0">
+            <mj-include path="./email-footer.mjml"/>
+        </mj-section>
+    </mj-body>
+</mjml>
